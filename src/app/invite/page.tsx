@@ -1,13 +1,10 @@
-import { IconButton } from '@/components/icon-button'
-import { InputField, InputIcon, InputRoot } from '@/components/input'
-import { BadgeCheck, Copy, Link, Medal, MousePointerClick } from 'lucide-react'
 import Image from 'next/image'
-import { InviteCard } from './invite-card'
+
+import { InviteLinkInput } from './invite-link-input'
+import { Ranking } from './ranking'
+import { Stats } from './stats'
 
 import logo from '@/assets/logo.svg'
-import medalCopper from '@/assets/medal-copper.svg'
-import medalGold from '@/assets/medal-gold.svg'
-import medalSilver from '@/assets/medal-silver.svg'
 
 export default function InvitePage() {
   return (
@@ -35,89 +32,13 @@ export default function InvitePage() {
             </p>
           </div>
 
-          <InputRoot>
-            <InputIcon>
-              <Link className="size-5" />
-            </InputIcon>
-            <InputField
-              readOnly
-              defaultValue="devstage.com/codecraft-summit-2025/renan-2741"
-            />
-            <IconButton className="-mr-2">
-              <Copy className="size-5" />
-            </IconButton>
-          </InputRoot>
+          <InviteLinkInput />
 
-          <div className="grid gap-3 md:grid-cols-3">
-            <InviteCard
-              dataText="1042"
-              title="Acessos ao link"
-              icon={<MousePointerClick className="size-5" />}
-            />
-            <InviteCard
-              dataText="700"
-              title="Inscrições feitas"
-              icon={<BadgeCheck className="size-5" />}
-            />
-            <InviteCard
-              dataText="3º"
-              title="Posição no ranking"
-              icon={<Medal className="size-5" />}
-            />
-          </div>
+          <Stats />
         </div>
       </div>
 
-      <div className="w-full max-w-[550px] space-y-5 md:max-w-[400px]">
-        <h2 className="text-gray-200 text-xl font-heading font-semibold leading-none">
-          Ranking de indicações
-        </h2>
-
-        <div className="space-y-4">
-          <div className="relative rounded-xl bg-gray-700 border border-gray-600 p-6 flex flex-col justify-center gap-6">
-            <span className="text-sm text-gray-300 leading-none">
-              <span className="font-semibold">1º</span> | André Souza
-            </span>
-            <span className="font-heading text-2xl font-semibold text-gray-200 leading-none">
-              1.128
-            </span>
-
-            <Image
-              className="absolute top-0 right-8"
-              src={medalGold}
-              alt="medalha de ouro"
-            />
-          </div>
-          <div className="relative rounded-xl bg-gray-700 border border-gray-600 p-6 flex flex-col justify-center gap-6">
-            <span className="text-sm text-gray-300 leading-none">
-              <span className="font-semibold">2º</span> | Melissa Loures
-            </span>
-            <span className="font-heading text-2xl font-semibold text-gray-200 leading-none">
-              928
-            </span>
-
-            <Image
-              className="absolute top-0 right-8"
-              src={medalSilver}
-              alt="medalha de ouro"
-            />
-          </div>
-          <div className="relative rounded-xl bg-gray-700 border border-gray-600 p-6 flex flex-col justify-center gap-6">
-            <span className="text-sm text-gray-300 leading-none">
-              <span className="font-semibold">3º</span> | Renan Borges
-            </span>
-            <span className="font-heading text-2xl font-semibold text-gray-200 leading-none">
-              700
-            </span>
-
-            <Image
-              className="absolute top-0 right-8"
-              src={medalCopper}
-              alt="medalha de ouro"
-            />
-          </div>
-        </div>
-      </div>
+      <Ranking />
     </div>
   )
 }
