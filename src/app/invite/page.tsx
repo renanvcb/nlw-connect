@@ -7,6 +7,8 @@ import { Stats } from './stats'
 import logo from '@/assets/logo.svg'
 
 export default function InvitePage() {
+  const inviteLink = 'devstage.com/codecraft-summit-2025/renan-2741'
+
   return (
     <div className="min-h-dvh flex items-center justify-between gap-16 flex-col md:flex-row">
       <div className="flex flex-col gap-10 w-full max-w-[550px]">
@@ -32,7 +34,7 @@ export default function InvitePage() {
             </p>
           </div>
 
-          <InviteLinkInput />
+          <InviteLinkInput inviteLink={inviteLink} />
 
           <Stats />
         </div>
