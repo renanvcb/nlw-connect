@@ -1,8 +1,8 @@
 import { IconButton } from '@/components/icon-button'
 import { InputField, InputIcon, InputRoot } from '@/components/input'
-import { InviteCard } from '@/components/invite-card'
 import { BadgeCheck, Copy, Link, Medal, MousePointerClick } from 'lucide-react'
 import Image from 'next/image'
+import { InviteCard } from './invite-card'
 
 import logo from '@/assets/logo.svg'
 import medalCopper from '@/assets/medal-copper.svg'
