@@ -22,6 +22,7 @@ export function SubscriptionForm() {
   } = useForm<SubscriptionSchema>({
     resolver: zodResolver(subscriptionSchema),
     mode: 'onBlur',
+    reValidateMode: 'onSubmit',
   })
 
   function onSubscribe(data: SubscriptionSchema) {
